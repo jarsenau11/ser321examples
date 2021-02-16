@@ -240,7 +240,7 @@ class WebServer {
           String json = fetchURL("https://api.github.com/" + query_pairs.get("query"));
           System.out.println(json);
 
-          builder.append("Check the todos mentioned in the Java source file");
+          //builder.append("Check the todos mentioned in the Java source file");
           // TODO: Parse the JSON returned by your fetch and create an appropriate
           // response
           // and list the owner name, owner id and name of the public repo on your webpage, e.g.
@@ -263,8 +263,8 @@ class WebServer {
         		  builder.append("Repo name: ");
         		  //System.out.print("Repo name: ");
         		  int j = 0;
-        		  while(json.charAt(i + j + 3) != '"') {
-        			  builder.append(json.charAt(3 + i + j));
+        		  while(json.charAt(i + j + 8) != '"') {
+        			  builder.append(json.charAt(8 + i + j));
         			  j++;
         		  }
         		  builder.append("\n");
@@ -275,8 +275,8 @@ class WebServer {
         		  builder.append("Owner name: ");
         		  //System.out.print("Owner name: ");
         		  int j = 0;
-        		  while(json.charAt(i + j + 3) != '"') {
-        			  builder.append(json.charAt(3 + i + j));
+        		  while(json.charAt(i + j + 8) != '"') {
+        			  builder.append(json.charAt(8 + i + j));
         			  //System.out.print(json.charAt(3 + i + j));
         			  j++;
         		  }
