@@ -259,7 +259,7 @@ class WebServer {
         		  builder.append("\n");
         		  //System.out.println("\n");
         	  }
-        	  if(json.charAt(i) == '"' && json.charAt(i + 1) == 'n' && json.charAt(i + 2) == 'a' && json.charAt(i + 3) == 'm' && json.charAt(i + 4) == 'e') {
+        	  if(json.charAt(i) == '"' && json.charAt(i + 1) == 'n' && json.charAt(i + 2) == 'a' && json.charAt(i + 3) == 'm' && json.charAt(i + 4) == 'e' && json.charAt(i + 8) != 'G' && json.charAt(i + 9) != 'N' && json.charAt(i + 9) != 'U') {
         		  builder.append("Repo name: ");
         		  //System.out.print("Repo name: ");
         		  int j = 0;
@@ -280,6 +280,7 @@ class WebServer {
         			  //System.out.print(json.charAt(3 + i + j));
         			  j++;
         		  }
+        		  builder.append("\n");
         		  builder.append("\n");
         		  //System.out.println("\n");
         		  j = 0;
