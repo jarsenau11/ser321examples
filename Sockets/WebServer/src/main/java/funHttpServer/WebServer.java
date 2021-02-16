@@ -252,7 +252,7 @@ class WebServer {
         	  if(json.charAt(i) == '{' && json.charAt(i + 1) == '"' && json.charAt(i + 2) == 'i' && json.charAt(i + 3) == 'd') {
         		  builder.append("ID: ");
         		  //System.out.print("ID: ");
-        		  for(int j = 0; j < 11; j++) {
+        		  for(int j = 2; j < 11; j++) {
         			  builder.append(json.charAt(4 + i + j));
         			  //System.out.print(json.charAt(4 + i + j));
         		  }
@@ -263,8 +263,8 @@ class WebServer {
         		  builder.append("Repo name: ");
         		  //System.out.print("Repo name: ");
         		  int j = 0;
-        		  while(json.charAt(i + j + 7) != '"') {
-        			  builder.append(json.charAt(7 + i + j));
+        		  while(json.charAt(i + j + 4) != '"') {
+        			  builder.append(json.charAt(4 + i + j));
         			  j++;
         		  }
         		  builder.append("\n");
@@ -275,8 +275,8 @@ class WebServer {
         		  builder.append("Owner name: ");
         		  //System.out.print("Owner name: ");
         		  int j = 0;
-        		  while(json.charAt(i + j + 7) != '"') {
-        			  System.out.print(json.charAt(7 + i + j));
+        		  while(json.charAt(i + j + 4) != '"') {
+        			  System.out.print(json.charAt(4 + i + j));
         			  j++;
         		  }
         		  builder.append("\n");
@@ -284,7 +284,7 @@ class WebServer {
         		  j = 0;
         	  }
           	}
-
+	
         } else {
           // if the request is not recognized at all
 
