@@ -263,8 +263,8 @@ class WebServer {
         		  builder.append("Repo name: ");
         		  //System.out.print("Repo name: ");
         		  int j = 0;
-        		  while(json.charAt(i + j + 4) != '"') {
-        			  builder.append(json.charAt(4 + i + j));
+        		  while(json.charAt(i + j + 3) != '"') {
+        			  builder.append(json.charAt(3 + i + j));
         			  j++;
         		  }
         		  builder.append("\n");
@@ -275,8 +275,9 @@ class WebServer {
         		  builder.append("Owner name: ");
         		  //System.out.print("Owner name: ");
         		  int j = 0;
-        		  while(json.charAt(i + j + 4) != '"') {
-        			  System.out.print(json.charAt(4 + i + j));
+        		  while(json.charAt(i + j + 3) != '"') {
+        			  builder.append(json.charAt(3 + i + j));
+        			  //System.out.print(json.charAt(3 + i + j));
         			  j++;
         		  }
         		  builder.append("\n");
