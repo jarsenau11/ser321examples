@@ -217,7 +217,13 @@ class WebServer {
           // TODO: Include error handling here with a correct error code and
           // a response that makes sense
 		catch (Exception e) {
-		  System.out.println("error");
+		  builder.append("HTTP/1.1 400 Bad Request\n");
+                  builder.append("Content-Type: text/html; charset=utf-8\n");
+                  builder.append("\n");
+                  builder.append("Error code 400: incorrect input. Please use the format "
+            	  		+ "/multiply?num1=X&num2=Y where X is your first number and Y is your second number.");
+//        	  System.out.println("Error code 400: incorrect input. Please use the format "
+//        	  		+ "/multiply?num1=X&num2=Y where X is your first number and Y is your second number.");
 		}
 
         } else if (request.contains("github?")) {
