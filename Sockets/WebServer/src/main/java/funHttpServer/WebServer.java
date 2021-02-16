@@ -249,21 +249,22 @@ class WebServer {
           // amehlhase, 46384989 -> test316
 
 		for(int i = 0; i < json.length(); i++) {
-        	  if(json.charAt(i) == 'i' && json.charAt(i + 1) == 'd') {
+        	  if(json.charAt(i) == '{' && json.charAt(i + 1) == '"' && json.charAt(i + 2) == 'i' && json.charAt(i + 3) == 'd') {
         		  System.out.print("ID: ");
-        		  for(int j = 0; j < 9; j++) {
-        			  System.out.print(json.charAt(2 + i + j));
+        		  for(int j = 0; j < 11; j++) {
+        			  System.out.print(json.charAt(4 + i + j));
         		  }
         		  System.out.println("\n");
         	  }
-        	  if(json.charAt(i) == 'n' && json.charAt(i + 1) == 'a' && json.charAt(i + 2) == 'm' && json.charAt(i + 3) == 'e') {
+        	  if(json.charAt(i) == '"' && json.charAt(i + 1) == 'n' && json.charAt(i + 2) == 'a' && json.charAt(i + 3) == 'm' && json.charAt(i + 4) == 'e') {
         		  System.out.print("Repo name: ");
         		  int j = 0;
-        		  while(json.charAt(i + j + 6) != '"') {
-        			  System.out.print(json.charAt(6 + i + j));
+        		  while(json.charAt(i + j + 7) != '"') {
+        			  System.out.print(json.charAt(7 + i + j));
         			  j++;
         		  }
         		  System.out.println("\n");
+        		  j = 0;
         	  }
         	  if(json.charAt(i) == 'l' && json.charAt(i + 1) == 'o' && json.charAt(i + 2) == 'g' && json.charAt(i + 3) == 'i' && json.charAt(i + 4) == 'n' ) {
         		  System.out.print("Owner name: ");
@@ -274,7 +275,7 @@ class WebServer {
         		  }
         		  System.out.println("\n");
         	  }
-          }
+         	 }
 
         } else {
           // if the request is not recognized at all
